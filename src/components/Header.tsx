@@ -21,7 +21,7 @@ const Header = ({ isFixed = false, showNavigation = true }: HeaderProps) => {
         {/* Logo e título */}
         <a href="/" className="flex items-center gap-2">
           <img 
-            src="https://ajudaqi.com.br/wp-content/uploads/2023/06/icon.png" 
+            src="\images\logoajudaqi.png" 
             alt="AjudaQi Logo" 
             className="h-10 w-auto transition-transform hover:scale-105"
           />
@@ -51,7 +51,7 @@ const Header = ({ isFixed = false, showNavigation = true }: HeaderProps) => {
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="outline" size="icon" className="border-white/60">
-                <Menu className="h-5 w-5 text-white" />
+                <Menu className="h-5 w-5 text-black" />
               </Button>
             </SheetTrigger>
             <SheetContent>
@@ -68,8 +68,8 @@ const Header = ({ isFixed = false, showNavigation = true }: HeaderProps) => {
 
                 <Button className="group flex items-center gap-2 bg-white text-[#6A03EB] font-semibold border border-[#6A03EB] rounded-full px-4 py-2 shadow-md hover:bg-white hover:border-[#5000c5] hover:shadow-lg transition-all duration-300 hover:scale-105 mt-4" asChild>
                   <Link to="/countdown">
-                    <Sparkles className="h-4 w-4 text-[#6A03EB] group-hover:animate-pulse" />
-                    Sugerir Ferramenta
+                    
+                    Começar agora
                   </Link>
                 </Button>
               </nav>

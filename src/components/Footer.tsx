@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-ajudaqi-purple mb-4">AjudaQI</h3>
             <p className="text-gray-600 mb-4">
-              Seu hub de inteligência artificial com as melhores ferramentas para aumentar sua produtividade.
+              Seu sistema de aprendizagem acadêmico com as melhores ferramentas para aumentar sua produtividade.
             </p>
           </div>
           

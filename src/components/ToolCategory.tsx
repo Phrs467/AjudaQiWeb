@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export type Tool = {
   id: string;
@@ -58,16 +58,12 @@ const ToolCategory = ({ title, description, tools }: CategoryProps) => {
                   ))}
                 </div>
               </CardContent>
-              <CardFooter>
-              <Button
-                className="w-full group flex items-center justify-center gap-2 bg-white text-[#6A03EB] font-semibold border border-[#6A03EB] rounded-full px-4 py-2 shadow-md hover:border-[#5000c5] hover:shadow-lg transition-all duration-300 hover:scale-105"
-                asChild
-              >
-                <a href={tool.url} target="_blank" rel="noopener noreferrer">
-                  Acessar <ExternalLink className="h-4 w-4 text-[#6A03EB] group-hover:animate-pulse" />
-                </a>
-              </Button>
-
+              <CardFooter className="flex justify-center">
+                <Button className="w-full group flex items-center justify-center gap-2 bg-white text-[#6A03EB] font-semibold border border-[#6A03EB] rounded-full px-4 py-2 shadow-md hover:bg-white hover:border-[#5000c5] hover:shadow-lg transition-all duration-300 hover:scale-105" asChild>
+                  <Link to="/countdown">
+                    Em breve! <ExternalLink className="h-4 w-4 text-[#6A03EB] group-hover:animate-pulse" />
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
           ))}

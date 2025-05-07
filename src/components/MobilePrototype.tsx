@@ -14,7 +14,7 @@ const MobilePrototype = () => {
         <div className="flex flex-col items-center justify-center">
           <div className="mb-8 border-4 border-purple-200 rounded-lg shadow-xl overflow-hidden">
             <img 
-              src="src\images\prototipo-1-1024x407.jpg" 
+              src="\images\prototipo-1-1024x407.jpg" 
               alt="Protótipo Mobile do Ajudaqi"
               className="w-full max-w-[800px] h-auto"
               width={800}

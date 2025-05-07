@@ -7,27 +7,27 @@ const TeamSection = () => {
     {
       name: "Felipe B. Martins",
       role: "CEO - Diretor Executivo",
-      imageUrl: "src/images/felipe.png"
+      imageUrl: "/images/Felipe.png"
     },
     {
       name: "Ricardo Prado",
       role: "CFO - Diretor Financeiro",
-      imageUrl: "src/images/ricardo.png"
+      imageUrl: "/images/ricardo.png"
     },
     {
       name: "Pedro H. Ramos",
       role: "COO - Diretor de Operações",
-      imageUrl: "src/images/pedrofoto.png"
+      imageUrl: "/images/pedrofoto.png"
     },
     {
       name: "Lucas Macedo",
       role: "CMO - Diretor de marketing",
-      imageUrl: "src/images/lucas.png"
+      imageUrl: "/images/lucas.png"
     },
     {
       name: "Douglas H. Souza",
       role: "CTO - Diretor de Tecnologia",
-      imageUrl: "src/images/douglas.png"
+      imageUrl: "/images/douglas.png"
     }
   ];
 

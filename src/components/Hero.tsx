@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="relative">
             <div className="relative z-10 animate-float">
               <img 
-                src="src/images/7a2eaaa8-4cb4-4373-a077-737fb3035a2d.png" 
+                src="/images/7a2eaaa8-4cb4-4373-a077-737fb3035a2d.png" 
                 alt="Estudantes colaborando" 
               />
             </div>
