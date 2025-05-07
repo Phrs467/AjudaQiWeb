@@ -6,10 +6,16 @@ import {
   SheetContent,
   SheetTrigger
 } from '@/components/ui/sheet';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+interface HeaderProps {
+  isFixed?: boolean;
+  showNavigation?: boolean;
+}
+
+const Header = ({ isFixed = false, showNavigation = true }: HeaderProps) => {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-violet-300/40 bg-gradient-to-r from-[#1100A0]/90 to-[#6A03EB]/90">
+    <header className={`${isFixed ? 'fixed' : ''} top-0 left-0 w-full z-50 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-violet-300/40 bg-gradient-to-r from-[#1100A0]/90 to-[#6A03EB]/90`}>
       <div className="container flex items-center justify-between py-4">
         
         {/* Logo e título */}
@@ -25,43 +31,51 @@ const Header = () => {
         </a>
 
         {/* Navegação Desktop */}
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-white font-medium hover:underline">Sobre</a>
-          <a href="#tools" className="text-white font-medium hover:underline">Ferramentas</a>
-          <a href="#benefits" className="text-white font-medium hover:underline">Benefícios</a>
+        {showNavigation && (
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#about" className="text-white font-medium hover:underline">Sobre</a>
+            <a href="#tools" className="text-white font-medium hover:underline">Ferramentas</a>
+            <a href="#benefits" className="text-white font-medium hover:underline">Benefícios</a>
 
-          <Button className="group flex items-center gap-2 bg-white text-[#6A03EB] font-semibold border border-[#6A03EB] rounded-full px-4 py-2 shadow-md hover:bg-white hover:border-[#5000c5] hover:shadow-lg transition-all duration-300 hover:scale-105">
-            <Sparkles className="h-4 w-4 text-[#6A03EB] group-hover:animate-pulse" />
-            Sugerir Ferramenta
-          </Button>
-        </nav>
+            <Button className="group flex items-center gap-2 bg-white text-[#6A03EB] font-semibold border border-[#6A03EB] rounded-full px-4 py-2 shadow-md hover:bg-white hover:border-[#5000c5] hover:shadow-lg transition-all duration-300 hover:scale-105" asChild>
+              <Link to="/countdown">
+                
+                Começar agora
+              </Link>
+            </Button>
+          </nav>
+        )}
 
         {/* Navegação Mobile */}
-        <Sheet>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="outline" size="icon" className="border-white/60">
-              <Menu className="h-5 w-5 text-white" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent>
-            <nav className="flex flex-col gap-6 mt-10">
-              <a href="#about" className="text-lg font-medium hover:text-ajudaqi-purple transition-colors">
-                Sobre
-              </a>
-              <a href="#tools" className="text-lg font-medium hover:text-ajudaqi-purple transition-colors">
-                Ferramentas
-              </a>
-              <a href="#benefits" className="text-lg font-medium hover:text-ajudaqi-purple transition-colors">
-                Benefícios
-              </a>
-
-              <Button className="group flex items-center gap-2 bg-white text-[#6A03EB] font-semibold border border-[#6A03EB] rounded-full px-4 py-2 shadow-md hover:bg-white hover:border-[#5000c5] hover:shadow-lg transition-all duration-300 hover:scale-105 mt-4">
-                <Sparkles className="h-4 w-4 text-[#6A03EB] group-hover:animate-pulse" />
-                Sugerir Ferramenta
+        {showNavigation && (
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="outline" size="icon" className="border-white/60">
+                <Menu className="h-5 w-5 text-white" />
               </Button>
-            </nav>
-          </SheetContent>
-        </Sheet>
+            </SheetTrigger>
+            <SheetContent>
+              <nav className="flex flex-col gap-6 mt-10">
+                <a href="#about" className="text-lg font-medium hover:text-ajudaqi-purple transition-colors">
+                  Sobre
+                </a>
+                <a href="#tools" className="text-lg font-medium hover:text-ajudaqi-purple transition-colors">
+                  Ferramentas
+                </a>
+                <a href="#benefits" className="text-lg font-medium hover:text-ajudaqi-purple transition-colors">
+                  Benefícios
+                </a>
+
+                <Button className="group flex items-center gap-2 bg-white text-[#6A03EB] font-semibold border border-[#6A03EB] rounded-full px-4 py-2 shadow-md hover:bg-white hover:border-[#5000c5] hover:shadow-lg transition-all duration-300 hover:scale-105 mt-4" asChild>
+                  <Link to="/countdown">
+                    <Sparkles className="h-4 w-4 text-[#6A03EB] group-hover:animate-pulse" />
+                    Sugerir Ferramenta
+                  </Link>
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        )}
       </div>
     </header>
   );

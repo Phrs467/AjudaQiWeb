@@ -7,8 +7,7 @@ const TeamSection = () => {
     {
       name: "Felipe B. Martins",
       role: "CEO - Diretor Executivo",
-      // Using empty string will trigger the fallback with initials
-      imageUrl: ""
+      imageUrl: "src/images/felipe.png"
     },
     {
       name: "Ricardo Prado",

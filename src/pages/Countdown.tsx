@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Timer } from 'lucide-react';
@@ -13,6 +12,11 @@ const Countdown = () => {
     minutes: 0,
     seconds: 0
   });
+
+  // Resetar a posição da rolagem quando a página for carregada
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const calculateTimeLeft = () => {
     const difference = new Date('2026-01-01').getTime() - new Date().getTime();
@@ -36,7 +40,7 @@ const Countdown = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header showNavigation={false} />
       
       <main className="flex-grow flex flex-col items-center justify-center py-12 px-4">
         <div className="text-center max-w-3xl mx-auto">
@@ -79,9 +83,11 @@ const Countdown = () => {
               />
             </div>
             
-            <Button className="button-gradient text-white" asChild>
-              <Link to="/">Voltar para Home</Link>
-            </Button>
+            <div className="flex justify-center">
+            <Button className="group flex items-center gap-2 bg-white text-[#6A03EB] font-semibold border border-[#6A03EB] rounded-full px-4 py-2 shadow-md hover:bg-white hover:border-[#5000c5] hover:shadow-lg transition-all duration-300 hover:scale-105">
+            <Link to="/">Voltar para Home</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </main>
